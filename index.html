@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
+        rel="stylesheet" />
+    <link rel="icon" type="image/x-icon"
+        href="https://lawstrust.com/sites/default/files/u1250/ico_otkrytie_schyota.png">
+</head>
+
+<body>
+    <div class="CCDiv">
+        <h3>What's your name?</h3>
+        <input placeholder="Name" id="NameInp" type="text">
+        <button id="CCConfirmBtn">Confirm</button>
+    </div>
+    <div class="wrap">
+        <div id="messageDiv" class="messageDiv">
+            <p id="messageText">Message</p>
+        </div>
+        <div id="CardDiv" class="CardDiv">
+        </div>
+        <div id="HistoryDiv" class="HistoryDiv">
+        </div>
+        <div class="header">
+            <div id="CardBtn" class="headerSection">
+                <i class="fa-solid fa-credit-card"></i>
+            </div>
+            <div id="HistoryBtn" class="headerSection">
+                <i class="fa-solid fa-list"></i>
+            </div>
+            <!-- <div class="headerBackLoc">
+                <div class="languageSelector">
+                    <select id="langSelect">
+                        <option value="Eng">English</option>
+                        <option value="Ukr">Українська</option>
+                    </select>
+                </div>
+            </div> -->
+        </div>
+        <div class="main">
+            <div class="defaultDisplay">
+                <h3>You don't currently have a card,</h3>
+                <button id="CCBtn">Create?</button>
+            </div>
+            <div class="cardDisplay">
+                <div class="card">
+                    <p id="CardName"></p>
+                    <p id="CardID"></p>
+                </div>
+                <p id="MoneyDisplay"></p>
+                <input placeholder="Value" type="number" id="MoneyInp">
+            </div>
+            <div id="toolbar" class="toolbar">
+                <button id="TakeCreBtn" class="ToolbarBtn">Take credits</button>
+                <button id="PutCreBtn" class="ToolbarBtn">Put credits</button>
+                <button id="SetLimBtn" class="ToolbarBtn">Set Limit</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+<!--
+             <div id="HistoryLogDiv" class="HistoryLogDiv">
+                <div class="topLogDiv">
+                    <div class="leftLogDiv">
+                        <p id="TypeText">Simga</p>
+                        <p id="DataText">Cool</p>
+                    </div>
+                    <div class="rightLogDiv">
+                        <p id="AmountText">200$</p>
+                    </div>
+                </div>
+                <div class="bottomLogDiv">
+                    <div class="deleteBtnLog">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                </div>
+            </div> 
+-->

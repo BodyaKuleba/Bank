@@ -1,0 +1,566 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat Alternates";
+}
+
+::selection {
+    background: #ffdd81;
+    color: #444;
+}
+
+body {
+    background-color: #333;
+}
+
+.wrap {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.header {
+    width: 100%;
+    height: 10vh;
+    background-color: #444;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    top: -10vh;
+    transition: 0.4s;
+}
+
+.headerSection {
+    height: 80%;
+    aspect-ratio: 1/1;
+    font-size: 3em;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    margin: 0 10px;
+}
+
+.headerSection:hover {
+    transform: scale(1.1);
+    border-radius: 10px;
+    background-color: #555;
+    filter: drop-shadow(0 0 5px #fff)
+}
+
+.headerSection:active {
+    transform: scale(0.8);
+    filter: brightness(0.8) drop-shadow(0 0 0px #333);
+    background-color: #444;
+}
+
+.headerBackLoc {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 40px;
+        transition: 0.2s;
+
+        option {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: #333;
+            border-radius: 10%;
+        }
+
+        option:checked {
+            background-color: #555;
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+
+    select:hover {
+        background-color: #fff;
+        color: #333;
+    }
+}
+
+.main {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.messageDiv {
+    position: fixed;
+    min-width: 30%;
+    height: 12%;
+    background-color: #ff7979;
+    border-end-end-radius: 40px;
+    corner-shape: squircle;
+    font-size: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1%;
+    top: 0;
+    left: -100%;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+    z-index: 100;
+}
+
+.HistoryDiv {
+    width: 60%;
+    height: 80%;
+    position: fixed;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+    background-color: #777;
+    overflow: auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    border-radius: 0 0 0em 2em;
+    overflow-y: auto;
+}
+
+.topLogDiv {
+    width: 100%;
+    height: 75%;
+    background-color: #999;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.bottomLogDiv {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding: 0 3%;
+}
+
+.HistoryDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+.HistoryDiv::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+.HistoryDiv::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.HistoryDiv::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+.HistoryLogDiv {
+    width: 90%;
+    flex: 0 0 25%;
+    margin: 40px 0;
+}
+
+.CardDiv {
+    width: 60%;
+    height: 80%;
+    position: fixed;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+    background-color: #444;
+    overflow: auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    border-radius: 0 0 0em 2em;
+    overflow-y: auto;
+    gap: 1em;
+    padding: 3vh 0;
+    overflow-x: hidden;
+}
+
+.CardDiv::-webkit-scrollbar {
+    width: 15px;
+}
+
+.CardDiv::-webkit-scrollbar-track {
+    background: #ccc;
+}
+
+.CardDiv::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+.CardDiv::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
+
+.CardItem {
+    width: 95%;
+    height: 20vh;
+    background-color: #3f3f3f;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 1%;
+    justify-content: space-between;
+    border: transparent 0.5rem #fff;
+
+    h3 {
+        font-size: 5em;
+        color: #B9FF72;
+    }
+
+    img {
+        height: 90%;
+    }
+
+    button {
+        position: relative;
+        width: 20%;
+        height: 50%;
+        font-size: 3em;
+        border-radius: 1rem;
+        border: none;
+        background-color: #bbffe6;
+        color: #333;
+        cursor: pointer;
+        transition: 0.2s;
+        right: 3%;
+    }
+
+    button:hover {
+        transform: scale(1.15);
+        filter: saturate(2);
+    }
+
+    button:active {
+        transform: scale(0.9);
+        filter: saturate(1) brightness(0.7);
+    }
+}
+
+.leftLogDiv {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding: 0 2%;
+}
+
+.rightLogDiv {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 2%;
+}
+
+.deleteBtnLog {
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-color: #ff6a6a;
+    color: #fff;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 10px 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.deleteBtnLog:hover {
+    filter: brightness(1.15) drop-shadow(0 0 10px #ff6a6a);
+}
+
+.deleteBtnLog:active {
+    filter: brightness(0.8);
+}
+
+.TypeText {
+    font-size: 2em;
+    color: #333333;
+    font-weight: 500;
+}
+
+.DataText {
+    font-size: 2em;
+    color: #393D59;
+    font-weight: 500;
+}
+
+.AmountText {
+    font-size: 5em;
+    color: #B9FF72;
+    font-weight: 600;
+}
+
+.toolbar {
+    position: absolute;
+    width: 100%;
+    height: 13%;
+    background-color: #444;
+    bottom: 0;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+    gap: 20px;
+    bottom: -30%;
+}
+
+.ToolbarBtn {
+    min-width: 15%;
+    height: 70%;
+    font-size: 2em;
+    padding: 0 2%;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    color: #444;
+    background-color: #a9ffe0;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.ToolbarBtn:hover {
+    transform: scale(1.1);
+    filter: saturate(2);
+}
+
+.ToolbarBtn:active {
+    transform: scale(0.9);
+    filter: saturate(0.5);
+}
+
+.card {
+    position: absolute;
+    bottom: 45%;
+    width: 35%;
+    aspect-ratio: 1/0.615;
+    background-position: center;
+    background-size: cover;
+    background-image: url(Images/CreditCard3.png);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#CardName {
+    font-size: clamp(1.5rem, 3.5vw, 4rem);
+    position: absolute;
+    left: 8%;
+    bottom: 8%;
+    font-weight: 600;
+    color: #fff;
+}
+
+#MoneyDisplay {
+    font-size: 5em;
+    font-weight: 700;
+    position: absolute;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #B9FF72;
+}
+
+#CardID {
+    font-size: clamp(1rem, 3vw, 3rem);
+    font-weight: 700;
+    position: absolute;
+    bottom: 30%;
+    color: #fff;
+    text-align: center;
+}
+
+#MoneyInp {
+    position: absolute;
+    width: 30%;
+    height: 8%;
+    bottom: 20%;
+    font-size: 3em;
+    background-color: #555;
+    border: none;
+    outline: none;
+    padding: 0 1%;
+    color: #fff;
+    border-radius: 0.2em;
+    font-weight: 500;
+    text-align: center;
+}
+
+.cardDisplay {
+    width: 100%;
+    height: 87%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.defaultDisplay {
+    width: 100%;
+    height: 87%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+
+    h3 {
+        font-size: 3.2rem;
+        color: #fff;
+    }
+
+    button {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #333;
+        padding: 1% 2%;
+        border-radius: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        transform: scale(1.15);
+        background-color: rgb(73, 255, 194);
+        filter: drop-shadow(rgb(73, 255, 194) 0 0 10px);
+    }
+
+    button:active {
+        transform: scale(0.9);
+        background-color: rgb(197, 255, 236);
+        filter: none;
+    }
+}
+
+.CCDiv {
+    width: 40em;
+    height: 15em;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    z-index: 5;
+    background-color: #555;
+    translate: -50% -50%;
+    left: 50%;
+    top: 50%;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    color: #fff;
+
+    h3 {
+        font-size: 2.5rem;
+    }
+
+    input {
+        width: 70%;
+        outline: none;
+        border: none;
+        height: 20%;
+        border-radius: 1rem;
+        font-size: 2em;
+        padding: 0 1%;
+        color: #333;
+        font-weight: 500;
+        text-align: center;
+    }
+
+    button {
+        width: 40%;
+        height: 15%;
+        font-size: 1.6em;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.2s;
+        border: none;
+        background-color: #fff;
+    }
+
+    button:hover {
+        transform: scale(1.2);
+        background-color: #a9ffe0;
+        filter: drop-shadow(#a9ffe0 0 0 10px);
+    }
+
+    button:active {
+        transform: scale(0.9);
+        background-color: #bbffe6;
+        filter: none;
+    }
+}
+
+#plusCardBtn {
+    font-size: 5rem;
+    cursor: pointer;
+    margin: 3vh;
+    background: none;
+    border: none;
+    color: #B9FF72;
+    transition: 0.2s;
+}
+
+#plusCardBtn:hover {
+    transform: scale(1.3);
+    filter: brightness(1.2);
+}
+
+.selectedCard {
+    border: solid 0.2rem #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
